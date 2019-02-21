@@ -16,6 +16,10 @@ HttpExtension is a .NET Standard 2.0 library.
 
 Extensions to make using HttpClient easy.
 
+```csharp
+using HttpExtension;
+```
+
 * GetAsync<T> : Gets the return of a Get Rest and converts to the object or collection of pre-defined objects.
 You can use only the path of the rest method, or pass a parameter dictionary. In case the url has parameters.
 
