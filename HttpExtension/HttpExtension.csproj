@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>tbertuzzi</Authors>
+    <Company>KBits</Company>
+    <Description>Extensions for HttpClient</Description>
+    <Copyright>Copyright ©2019 KBits</Copyright>
+    <PackageLicenseUrl>http://opensource.org/licenses/MS-PL</PackageLicenseUrl>
+    <PackageTags>helpers http httpclient nethttp rest</PackageTags>
+    <PackageReleaseNotes>First Release</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/TBertuzzi/HttpExtension</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TBertuzzi/HttpExtension</RepositoryUrl>
+    <PackageIconUrl>https://github.com/TBertuzzi/HttpExtension/blob/master/Resources/helpersicon.png?raw=true</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

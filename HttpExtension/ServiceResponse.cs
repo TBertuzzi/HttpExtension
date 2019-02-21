@@ -57,3 +57,4 @@ namespace HttpExtension
             this.Error = error;
         }
     }
+}
