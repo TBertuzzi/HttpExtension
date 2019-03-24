@@ -8,7 +8,7 @@ Extensions for HttpClient
 
 |Name|Info|
 | ------------------- | :------------------: |
-|RepositoryHelpers|[![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue.svg)](https://www.nuget.org/packages/HttpExtension/1.0.0/)|
+|RepositoryHelpers|[![NuGet](https://buildstats.info/nuget/HttpExtension)](https://www.nuget.org/packages/HttpExtension/1.0.0/)|
 
 **Platform Support**
 
