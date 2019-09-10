@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,12 +8,12 @@
     <Copyright>Copyright ©2019 KBits</Copyright>
     <PackageLicenseUrl>http://opensource.org/licenses/MS-PL</PackageLicenseUrl>
     <PackageTags>helpers http httpclient nethttp rest post get put delete async</PackageTags>
-    <PackageReleaseNotes>Added Put and Delete async</PackageReleaseNotes>
+    <PackageReleaseNotes>Added MediaType</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/TBertuzzi/HttpExtension</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TBertuzzi/HttpExtension</RepositoryUrl>
     <PackageIconUrl>https://github.com/TBertuzzi/HttpExtension/blob/master/Resources/helpersicon.png?raw=true</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

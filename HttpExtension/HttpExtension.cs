@@ -11,22 +11,23 @@ namespace HttpExtension
     public static class HttpExtension
     {
 
-        public static async Task<HttpResponseMessage> PostAsync(this HttpClient httpClient, string address, object dto)
+        public static async Task<HttpResponseMessage> PostAsync(this HttpClient httpClient, string address,
+            object dto,string mediaType = "application/json")
         {
             var jsonRequest = JsonConvert.SerializeObject(dto);
-            var content = new StringContent(jsonRequest, Encoding.UTF8, "text/json");
+            var content = new StringContent(jsonRequest, Encoding.UTF8, mediaType);
 
             return await httpClient.PostAsync(address, content);
         }
 
 
         public static async Task<ServiceResponse<T>> PostAsync<T>(this HttpClient httpClient, string address,
-            object dto)
+            object dto, string mediaType = "application/json")
         {
             try
             {
                 var jsonRequest = JsonConvert.SerializeObject(dto);
-                var content = new StringContent(jsonRequest, Encoding.UTF8, "text/json");
+                var content = new StringContent(jsonRequest, Encoding.UTF8, mediaType);
 
                 var response = await httpClient.PostAsync(
                     address,
@@ -42,22 +43,23 @@ namespace HttpExtension
             }
         }
 
-        public static async Task<HttpResponseMessage> PutAsync(this HttpClient httpClient, string address, object dto)
+        public static async Task<HttpResponseMessage> PutAsync(this HttpClient httpClient, string address, object dto,
+            string mediaType = "application/json")
         {
             var jsonRequest = JsonConvert.SerializeObject(dto);
-            var content = new StringContent(jsonRequest, Encoding.UTF8, "text/json");
+            var content = new StringContent(jsonRequest, Encoding.UTF8, mediaType);
 
             return await httpClient.PutAsync(address, content);
         }
 
 
         public static async Task<ServiceResponse<T>> PutAsync<T>(this HttpClient httpClient, string address,
-            object dto)
+            object dto, string mediaType = "application/json")
         {
             try
             {
                 var jsonRequest = JsonConvert.SerializeObject(dto);
-                var content = new StringContent(jsonRequest, Encoding.UTF8, "text/json");
+                var content = new StringContent(jsonRequest, Encoding.UTF8, mediaType);
 
                 var response = await httpClient.PutAsync(
                     address,
@@ -73,22 +75,23 @@ namespace HttpExtension
             }
         }
 
-        public static async Task<HttpResponseMessage> DeleteAsync(this HttpClient httpClient, string address, object dto)
+        public static async Task<HttpResponseMessage> DeleteAsync(this HttpClient httpClient,
+            string address, object dto, string mediaType = "application/json")
         {
             var jsonRequest = JsonConvert.SerializeObject(dto);
-            var content = new StringContent(jsonRequest, Encoding.UTF8, "text/json");
+            var content = new StringContent(jsonRequest, Encoding.UTF8, mediaType);
 
             return await httpClient.DeleteAsync(address, content);
         }
 
 
         public static async Task<ServiceResponse<T>> DeleteAsync<T>(this HttpClient httpClient, string address,
-            object dto)
+            object dto, string mediaType = "application/json")
         {
             try
             {
                 var jsonRequest = JsonConvert.SerializeObject(dto);
-                var content = new StringContent(jsonRequest, Encoding.UTF8, "text/json");
+                var content = new StringContent(jsonRequest, Encoding.UTF8, mediaType);
 
                 var response = await httpClient.DeleteAsync(
                     address,
