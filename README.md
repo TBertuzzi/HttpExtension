@@ -6,9 +6,9 @@ Extensions for HttpClient
 
 **NuGet**
 
-|Name|Info|
-| ------------------- | :------------------: |
-|HttpExtension|[![NuGet](https://buildstats.info/nuget/HttpExtension)](https://www.nuget.org/packages/HttpExtension/)|
+|Name|Info|Contributors|
+| ------------------- | ------------------- | ------------------- |
+|HttpExtension|[![NuGet](https://buildstats.info/nuget/HttpExtension)](https://www.nuget.org/packages/HttpExtension/)|[![GitHub contributors](https://img.shields.io/github/contributors/TBertuzzi/HttpExtension.svg)](https://github.com/TBertuzzi/HttpExtension/graphs/contributors)|
 
 **Platform Support**
 
