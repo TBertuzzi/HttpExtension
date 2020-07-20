@@ -144,6 +144,21 @@ public static class HttpExtensionHelper
         }
     }
 
+    public static async Task<HttpExtensionResponse<T>> SendAsync<T>(this HttpClient httpClient, HttpRequestMessage request)
+    {
+        try
+        {
+            var response = await httpClient.SendAsync(request).ConfigureAwait(false);
+            return await GetResponse<T>(response);
+        }
+        catch (Exception ex)
+        {
+            return new HttpExtensionResponse<T>(
+                HttpStatusCode.InternalServerError,
+                ex);
+        }
+    }
+
     private static async Task<HttpExtensionResponse<T>> GetResponse<T>(HttpResponseMessage response)
     {
         var returnResponse = new HttpExtensionResponse<T>(response.StatusCode);

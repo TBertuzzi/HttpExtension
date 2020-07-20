@@ -39,7 +39,13 @@ You can use only the path of the rest method, or pass a parameter dictionary. In
  public static async Task<HttpExtensionResponse<T>> DeleteAsync<T>(this HttpClient httpClient, string address, object dto);
 ```
 
-* ServiceResponse<T> : Object that facilitates the return of requests Rest. It returns the Http code of the request, already converted object and the contents in case of errors.
+* SendAsync<T> : Use SendAsync for your custom HTTP request message and return predefined objects or collection.
+
+```csharp
+ public static async Task<HttpExtensionResponse<T>> SendAsync<T>(this HttpClient httpClient, HttpRequestMessage request);
+```
+
+* HttpExtensionResponse<T> : Object that facilitates the return of requests Rest. It returns the Http code of the request, already converted object and the contents in case of errors.
 
 ```csharp
 public class HttpExtensionResponse<T>
