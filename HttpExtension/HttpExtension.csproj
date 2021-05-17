@@ -5,21 +5,29 @@
     <Authors>tbertuzzi</Authors>
     <Company>KBits</Company>
     <Description>Extensions for HttpClient</Description>
-    <Copyright>Copyright ©2020 KBits</Copyright>
+    <Copyright>Copyright ©2021 KBits</Copyright>
     <PackageLicenseUrl>http://opensource.org/licenses/MS-PL</PackageLicenseUrl>
     <PackageTags>helpers http httpclient nethttp rest post get put delete async</PackageTags>
-    <PackageReleaseNotes>- Adding support for SendAsync method</PackageReleaseNotes>
+    <PackageReleaseNotes>- Adding support for PostAsync without body</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/TBertuzzi/HttpExtension</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TBertuzzi/HttpExtension</RepositoryUrl>
-    <PackageIconUrl>https://github.com/TBertuzzi/HttpExtension/blob/master/Resources/helpersicon.png?raw=true</PackageIconUrl>
+    <PackageIconUrl></PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.1.0</Version>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
+    <Version>2.2.0</Version>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
+    <FileVersion>2.2.0.0</FileVersion>
+    <PackageIcon>helpersicon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Resources\helpersicon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
