@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 public static class HttpExtensionHelper
 {
+
+
     public static async Task<HttpResponseMessage> PostAsync(this HttpClient httpClient, string address,
         object dto, string mediaType = "application/json")
     {
@@ -17,6 +19,22 @@ public static class HttpExtensionHelper
         return await httpClient.PostAsync(address, content);
     }
 
+    public static async Task<HttpExtensionResponse<T>> PostAsync<T>(this HttpClient httpClient, string address)
+    {
+        try
+        {
+
+            var response = await httpClient.PostAsync(address, null);
+
+            return await GetResponse<T>(response);
+        }
+        catch (Exception ex)
+        {
+            return new HttpExtensionResponse<T>(
+                HttpStatusCode.InternalServerError,
+                ex);
+        }
+    }
 
     public static async Task<HttpExtensionResponse<T>> PostAsync<T>(this HttpClient httpClient, string address,
         object dto, string mediaType = "application/json")
