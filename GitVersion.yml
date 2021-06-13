@@ -1,0 +1,6 @@
+next-version: 3.0.0
+branches:
+  release:
+    regex: releases?[/-]
+  develop:
+    tag: 'pre'
