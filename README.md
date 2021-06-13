@@ -21,15 +21,14 @@ You can use only the path of the rest method, or pass a parameter dictionary. In
 
 ```csharp
  public static async Task<HttpExtensionResponse<T>> GetAsync<T>(this HttpClient httpClient, string address);
- public static async Task<HttpExtensionResponse<T>> GetAsync<T>(this HttpClient httpClient, string address,
-        Dictionary<string, string> values);
+ public static async Task<HttpExtensionResponse<T>> GetAsync<T>(this HttpClient httpClient, string address, Dictionary<string, string> values);
 ```
 
 
 * PostAsync<T>,PutAsync<T> and DeleteAsync<T> : Use post, put and delete service methods rest asynchronously and return objects if necessary. 
 
 ```csharp
- public static async Task<HttpResponseMessage> PostAsync(this HttpClient httpClient,string address, object dto);
+ public static async Task<HttpResponseMessage> PostAsync(this HttpClient httpClient, string address, object dto);
  public static async Task<HttpExtensionResponse<T>> PostAsync<T>(this HttpClient httpClient, string address, object dto);
  
  public static async Task<HttpResponseMessage> PutAsync(this HttpClient httpClient,string address, object dto);
@@ -64,10 +63,9 @@ Example of use :
 
 ```csharp
 public async Task<List<Model.Todo>> GetTodos()
- {
+{
     try
     {
-
         //GetAsync Return with Object
         var response = await _httpClient.GetAsync<List<Model.Todo>>("todos");
            
@@ -85,5 +83,45 @@ public async Task<List<Model.Todo>> GetTodos()
     {
         throw new Exception(ex.Message);
     }
- }
+}
+```
+
+**Retry Pattern support using Polly**
+
+You can use the retry pattern with HttpExtension using [Polly](https://github.com/App-vNext/Polly).
+
+Example of use :
+
+```csharp
+public async Task<List<Model.Todo>> GetTodos()
+{
+    var policy = CreatePolicy();
+    try
+    {
+        //GetAsync using retry pattern
+        var response = await _httpClient.GetAsync<List<Model.Todo>>("todos", policy);
+           
+        if (response.StatusCode == HttpStatusCode.OK)
+            return response.Value;
+        else
+        {
+            throw new Exception(
+                   $"HttpStatusCode: {response.StatusCode.ToString()} Message: {response.Content}");
+        }
+    }
+    catch (Exception ex)
+    {
+        throw new Exception(ex.Message);
+    }
+}
+
+private AsyncRetryPolicy CreatePolicy()
+{
+    return Policy
+    .Handle<HttpRequestException>()
+    .WaitAndRetryAsync(
+        retryCount: 3,
+        sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(2)
+    );
+}
 ```
