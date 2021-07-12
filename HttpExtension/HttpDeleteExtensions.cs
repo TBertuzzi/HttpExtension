@@ -97,7 +97,8 @@ public static partial class HttpExtensions
 
     private static async Task<HttpExtensionResponse<T>> InternalDeleteAsync<T>(HttpClient httpClient, string address)
     {
-        var response = await httpClient.DeleteAsync(address, null);
+
+        var response = await httpClient.DeleteAsync(address);
         return await GetResponse<T>(response);
     }
 
