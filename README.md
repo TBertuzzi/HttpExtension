@@ -12,7 +12,7 @@ Extensions for HttpClient
 
 **Platform Support**
 
-HttpExtension is a .NET Core 6.0 library.
+HttpExtension is a netstandard 2.1 library.
 
 Extensions to make using HttpClient easy.
 
